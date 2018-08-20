@@ -1,1 +1,3 @@
-# LeanSummary
+# Lean Summary
+### Installation
+`npm install`
