@@ -15,7 +15,31 @@
 <body>
 
 <div class="container-fluid">
+    <div class="row">
 
+        <table class="table table-{1:striped|sm|bordered|hover|inverse} table-inverse">
+            <thead class="thead-inverse|thead-default">
+            <tr>
+                <th>Command</th>
+                <th>Description</th>
+                <th>Examples</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><code>su </code></td>
+                <td>
+                    change user ID or become superuser
+                </td>
+                <td>
+                    su moataz
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
     <div class="row content">
         <div class="col-12">
             <h1>Day-4_FileSystem_Utilites_Cont</h1>
@@ -156,41 +180,121 @@
                 <li>(c) char dev</li>
                 <li>(l) link file</li>
             </ul>
+            <h4>Next</h4>
+            <ul>
+                <li>Security-Enhanced Linux (SELinux)</li>
+                <li><a href="http://www.theunixschool.com/2012/10/link-count-file-vs-directory.html">Link count</a></li>
+            </ul>
             <p>CHeck this tool <a href="http://permissions-calculator.org/">Unix Permissions Calculator
             </a></p>
+
 
             <table class="table table-{1:striped|sm|bordered|hover|inverse} table-inverse">
                 <thead class="thead-inverse|thead-default">
                 <tr>
                     <th>Command</th>
                     <th>Description</th>
+                    <th>Examples</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td><code>chmod</code></td>
-                    <td>change file mode bits</td>
+                    <td><code><a href="https://linux.die.net/man/1/chmod">chmod</a></code></td>
+                    <td>
+                        <p>change file mode bits</p>
+
+                    </td>
+
+                    <td>
+                        <ul>
+                            <li><code>chmod u+w filename.extension</code> (add write permission to user(owner) (u))</li>
+                            <li><code>chmod g+r filename.extension</code> (add read permission to group (g))</li>
+                            <li><code>chmod o-r filename.extension</code> (delete reading permission to other (o))</li>
+                            <li>You can add / delete multi permissions like (<code>chmod ugo+r filename.extension</code>
+                                to add read
+                                permission to user,group
+                                and other)
+                            </li>
+                            <li>for all you can use <code>chmod a+x filename.extension</code> this will give all Execute
+                                permission
+                            </li>
+                            <li>using <code>chmod <b>-R</b> </code> will directories will change mode <b>recursively</b>
+                            </li>
+                        </ul>
+                    </td>
                 </tr>
-                <td><code></code></td>
-                <td></td>
+                <tr>
+                    <td><code> <a href="https://linux.die.net/man/1/chown">chown</a></code></td>
+                    <td> change file owner and group</td>
+                    <td>
+                        <ul>
+                            <li><code>sudo <b>chown</b> moataz site/</code> to change owner of site directory to be user
+                                => moataz
+                            </li>
+
+                            <li><code>sudo <b>chown</b> :admins site/</code> to change owner of site directory to be
+                                group
+                                => admins
+                            </li>
+                            <li><code>sudo <b>chown</b> moataz:admins site/</code> to change owner of site directory to
+                                be
+                                <ul>
+                                    <li> user => moataz</li>
+                                    <li> group => admins</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </td>
                 </tr>
 
+
+                <tr>
+                    <td><a href="https://linux.die.net/man/8/usermod">
+                        <cod>usermod</cod>
+                    </a></td>
+                    <td>modify a user account</td>
+                    <td>
+                        <ul>
+                            <li><code> usermod -G admins ola
+                            </code> add user ola to group admins
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 </tbody>
             </table>
 
-            <h4>Files & Folders</h4>
+            <h4>Colors</h4>
             <table class="table table-{1:striped|sm|bordered|hover|inverse} table-inverse">
                 <thead class="thead-inverse|thead-default">
                 <tr>
-                    <th>Path</th>
+                    <th>Color</th>
                     <th>Description</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td><code> </code></td>
-                    <td></td>
+                    <td>
+                        <div style="background: black;color: white">white</div>
+                    </td>
+                    <td>Normal file</td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div style="background: black;color: blue">blue</div>
+                    </td>
+
+                    <td>is a directory</td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div style="background: black;color: lawngreen">lemon</div>
+                    </td>
+                    <td>executable file</td>
                 </tr>
 
 
