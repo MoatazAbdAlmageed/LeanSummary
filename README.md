@@ -1,3 +1,3 @@
-# Lean Summary
+# Learn Summary
 ### Installation
 `npm install`
