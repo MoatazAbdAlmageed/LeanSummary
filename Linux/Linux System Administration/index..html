@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
     <style>
         .row {
-            border-bottom: 4px solid #0062cc;
+            border-bottom: 4px dotted #0062cc;
             margin-bottom: 3em;
         }
     </style>
@@ -86,6 +86,23 @@
                     <td><code>CTRL+q</code></td>
                     <td>UnLock the terminal screen</td>
                 </tr>
+
+                </tbody>
+            </table>
+            <h4>abbreviations</h4>
+            <table class="table table-{1:striped|sm|bordered|hover|inverse} table-inverse">
+                <thead class="thead-inverse|thead-default">
+                <tr>
+                    <th>abbreviation</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code>GDM</code></td>
+                    <td>GNOME Display Manager</td>
+                </tr>
+
 
                 </tbody>
             </table>
@@ -401,6 +418,204 @@
     <div class="row">
         <div class="col-12">
             <h1>Redirection</h1>
+
+            <p>For more info</p>
+            <ul>
+                <li><a href="https://www.guru99.com/linux-redirection.html">Input Output Redirection in Linux/Unix
+                    Examples</a></li>
+
+            </ul>
+            <p>These files are always present whenever a program is run. As explained before a file descriptor, is
+                associated with each of these files.
+
+            </p>
+            <table align="center" border="1" class="table table-striped">
+                <tbody>
+                <tr>
+                    <th width="50%"><span style="text-align: center; "> <strong>File</strong></span></th>
+                    <th><span style="text-align: center; "> <strong>File Descriptor</strong></span></th>
+                </tr>
+                <tr>
+                    <td><span style="text-align: center; "> <strong>Standard Input STDIN</strong></span></td>
+                    <td><span style="text-align: center; "> <strong>0</strong></span></td>
+                </tr>
+                <tr>
+                    <td><span style="text-align: center; "> <strong>Standard Output STDOUT</strong></span></td>
+                    <td><span style="text-align: center; "> <strong>1</strong></span></td>
+                </tr>
+                <tr>
+                    <td><span style="text-align: center; "> <strong>Standard Error STDERR</strong></span></td>
+                    <td><span style="text-align: center; "> <strong>2</strong></span></td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <table class="table table-{1:striped|sm|bordered|hover|inverse} table-inverse">
+                <thead class="thead-inverse|thead-default">
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                    <th>Examples</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code>ls > log.txt</code></td>
+                    <td>
+
+                        <p> this code will output list command result to log file</p>
+
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td><p><code>ls test pop test > log.txt 2>error.txt</code></p>
+                    </td>
+                    <td>list directories test,pop and test if
+                        okay redirect
+                        result to log.txt file in case there is an error put it in error.txt file
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><code> >> </code></td>
+                    <td><p>append output , error </p></td>
+                </tr>
+                <td></td>
+                <tr>
+
+                    <td><code>cat <<\EOF>> log.txt
+                    </code></td>
+                    <td>cat screen</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td><code>cat
+                        <\log.txt> log2.txt
+                    </code></td>
+                    <td>use log.txt as input and output into log2.txt</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+
+                    <td><code> ls site new 2&>new.log
+                    </code></td>
+
+                    <td>add output and error in new.log file</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+
+                    <td><code>file</code></td>
+                    <td> determine file type
+                    </td>
+                    <td></td>
+                </tr>
+
+
+                <tr>
+                    <td><code>tee</code></td>
+                    <td>read from standard input and write to standard output and files
+                    </td>
+                    <td>
+                        <ul>
+                            <li><code> ls | tee log.txt
+                            </code> list on screen and save a copy to log file
+                            </li>
+
+                            <li><code> ls | tee -a log.txt
+                            </code> list on screen and append a copy to log file
+                            </li>
+                        </ul>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><code>more</code></td>
+                    <td>file perusal filter for crt viewing
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td><code>less</code></td>
+                    <td>opposite of more</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+
+                    <td><code> ls -lR / | less
+                    </code></td>
+                    <td>add output of ls to less</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td><code>w</code></td>
+                    <td>Show who is logged on and what they are doing.
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td><code>who
+                    </code></td>
+                    <td>show who is logged on
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><code>whoami
+                    </code></td>
+                    <td> print effective userid
+
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td><code>whatis</code></td>
+                    <td>display one-line manual page descriptions
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><code>whereis</code></td>
+                    <td>locate the binary, source, and manual page files for a command
+
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><code>last</code></td>
+                    <td>show a listing of last logged in users
+
+
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td><code>lastlog</code></td>
+                    <td>reports the most recent login of all users or of a given user
+
+
+                    </td>
+                    <td></td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+
         </div>
     </div>
 </div>
