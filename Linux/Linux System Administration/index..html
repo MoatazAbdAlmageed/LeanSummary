@@ -14,6 +14,7 @@
 </head>
 <body>
 
+
 <div class="container-fluid">
     <div class="row">
 
@@ -42,7 +43,7 @@
     </div>
     <div class="row content">
         <div class="col-12">
-            <h1>Day-4_FileSystem_Utilites_Cont</h1>
+            <h1>FileSystem_Utilites_Cont</h1>
             <h4>Commands</h4>
             <table class="table table-{1:striped|sm|bordered|hover|inverse} table-inverse">
                 <thead class="thead-inverse|thead-default">
@@ -95,7 +96,7 @@
 
     <div class="row content">
         <div class="col-12">
-            <h1>Day-5_Basic_User_Group_Administration</h1>
+            <h1>Basic_User_Group_Administration</h1>
             <h4>Users & Groups</h4>
 
             <ul>
@@ -158,7 +159,12 @@
 
     <div class="row content">
         <div class="col-12">
-            <h1>Day-5_Basic_Permissions</h1>
+            <h1>Permissions</h1>
+            <h4>For more inf</h4>
+            <ul>
+                <li><a href="https://kb.iu.edu/d/abdb">Change permissions for a file in Unix</a></li>
+            </ul>
+
             <h4>Who can deal with files ?</h4>
             <ul>
                 <li>User (Owner) (Like admin)</li>
@@ -206,6 +212,44 @@
                     </td>
 
                     <td>
+                        <h4>Symbolic method</h4>
+                        <table class="table" title="Abbreviations for access classes, operators, and access types">
+                            <colgroup>
+                                <col style="width:29%">
+                                <col style="width:41%">
+                                <col style="width:29%">
+
+
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th>Access Class</th>
+                                <th>Operator</th>
+                                <th>Access Type</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>u (user)</td>
+                                <td>+ (add access)</td>
+                                <td>r (read)</td>
+                            </tr>
+                            <tr>
+                                <td>g (group)</td>
+                                <td> - (remove access)</td>
+                                <td>w (write)</td>
+                            </tr>
+                            <tr>
+                                <td>o (other)</td>
+                                <td>= (set exact access)</td>
+                                <td>x (execute)</td>
+                            </tr>
+                            <tr>
+                                <td> a (all: u, g, and o)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
                         <ul>
                             <li><code>chmod u+w filename.extension</code> (add write permission to user(owner) (u))</li>
                             <li><code>chmod g+r filename.extension</code> (add read permission to group (g))</li>
@@ -221,6 +265,53 @@
                             <li>using <code>chmod <b>-R</b> </code> will directories will change mode <b>recursively</b>
                             </li>
                         </ul>
+
+                        <h4>Absolute form</h4>
+                        <ul>
+                            <li>Read(r) => 4</li>
+                            <li>Write(w)=> 2</li>
+                            <li>Execute(x) => 1</li>
+                            <li>All => 7</li>
+                        </ul>
+
+                        <h6>Frequency used permissions</h6>
+                        <div class="table-responsive">
+                            <table class="table" title="File permission attributes">
+                                <colgroup>
+                                    <col style="width:16%">
+                                    <col style="width:83%">
+
+
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <td>777</td>
+                                    <td>
+                                        <div class="wrap">anyone can do anything (read, write, or execute)</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>755</td>
+                                    <td>
+                                        <div class="wrap">you can do anything; others can only read and execute</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>711</td>
+                                    <td>
+                                        <div class="wrap">you can do anything; others can only execute</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>644</td>
+                                    <td>
+                                        <div class="wrap">you can read and write; others can only read</div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
                     </td>
                 </tr>
                 <tr>
@@ -266,6 +357,7 @@
                 </tbody>
             </table>
 
+
             <h4>Colors</h4>
             <table class="table table-{1:striped|sm|bordered|hover|inverse} table-inverse">
                 <thead class="thead-inverse|thead-default">
@@ -302,6 +394,13 @@
             </table>
 
 
+        </div>
+    </div>
+
+    <!--13 - 13-Day-6_Redirection-->
+    <div class="row">
+        <div class="col-12">
+            <h1>Redirection</h1>
         </div>
     </div>
 </div>
